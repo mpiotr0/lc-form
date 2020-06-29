@@ -5,6 +5,7 @@ import 'react-app-polyfill/ie9';
 import 'react-app-polyfill/stable';
 
 import * as serviceWorker from './serviceWorker';
+import { AuthUserRoute } from './components/auth-user-route';
 import { LoginForm } from './pages/login-form';
 import { LoginSuccess } from './pages/login-success';
 
@@ -13,12 +14,15 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route exact path="/">
+          <AuthUserRoute exact path="/">
+            <LoginSuccess />
+          </AuthUserRoute>
+          <Route path="/login">
             <LoginForm />
           </Route>
-          <Route path="/login-success">
+          <AuthUserRoute path="/login-success">
             <LoginSuccess />
-          </Route>
+          </AuthUserRoute>
         </Switch>
       </div>
     </BrowserRouter>
