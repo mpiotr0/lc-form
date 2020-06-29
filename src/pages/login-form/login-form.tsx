@@ -32,7 +32,7 @@ export const LoginForm = () => {
     <>
       <h1 className={styles.title}>Welcome back :)</h1>
       {hasAuthError && (
-        <div className={styles.alert}>Provided email and/or password are not valid</div>
+        <div className={styles.alert}>Invalid email or password</div>
       )}
       <Formik
         initialValues={formInitialValues}
