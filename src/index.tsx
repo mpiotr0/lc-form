@@ -8,11 +8,12 @@ import * as serviceWorker from './serviceWorker';
 import { AuthUserRoute } from './components/auth-user-route';
 import { LoginForm } from './pages/login-form';
 import { LoginSuccess } from './pages/login-success';
+import styles from './index.module.scss';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <div>
+      <div className={styles.wrapper}>
         <Switch>
           <AuthUserRoute exact path="/">
             <LoginSuccess />

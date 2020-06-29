@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { logoutUser } from '../../services';
+import { Button } from '../../components/button';
 
 export const LoginSuccess = () => {
   let history = useHistory();
@@ -13,8 +14,8 @@ export const LoginSuccess = () => {
 
   return (
     <div data-testid="login-success">
-      Login success
-      <button onClick={signout} data-testid="logout">Logout</button>
+      <h2>Login success</h2>
+      <Button onClick={signout} data-testid="logout">Logout</Button>
     </div>
   );
 };

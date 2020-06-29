@@ -3,9 +3,11 @@ import { useHistory } from "react-router-dom";
 import { Formik, Form, FormikState, FormikHelpers } from 'formik';
 
 import { authenticateUser } from '../../services';
+import { Button } from '../../components/button';
 import { LoginFormValues, formInitialValues } from './login-form.consts';
 import { loginFormSchema } from './login-form.schema';
 import { FormField } from './form-field';
+import styles from './login-form.module.scss';
 
 export const LoginForm = () => {
   let history = useHistory();
@@ -28,9 +30,9 @@ export const LoginForm = () => {
 
   return (
     <>
-      <h1>Please sign in</h1>
+      <h1 className={styles.title}>Welcome back :)</h1>
       {hasAuthError && (
-        <div>Provided email and/or password are not valid</div>
+        <div className={styles.alert}>Provided email and/or password are not valid</div>
       )}
       <Formik
         initialValues={formInitialValues}
@@ -59,12 +61,12 @@ export const LoginForm = () => {
               label="Remember me"
               {...formikValues}
             />
-            <button
+            <Button
               type="submit"
               disabled={formikValues.isSubmitting}
             >
               Submit
-            </button>
+            </Button>
           </Form>
         )}
       </Formik>

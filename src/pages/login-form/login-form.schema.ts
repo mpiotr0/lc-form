@@ -11,7 +11,7 @@ const schemaObject: { [key in LoginFormFields]: Schema<string | boolean | undefi
     .required(REQUIRED_FIELD_ERROR),
   password: string()
     .min(6, 'Password is too short')
-    .matches(PASSWORD_REGEX, 'Password shoult contain at least on uppercase letter, one lowercase letter and number')
+    .matches(PASSWORD_REGEX, 'Password should contain at least on uppercase letter, one lowercase letter and number')
     .required(REQUIRED_FIELD_ERROR),
   rememberUser: boolean(),
 };

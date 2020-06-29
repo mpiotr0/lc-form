@@ -1,0 +1,27 @@
+@import '../../styles/styles.scss';
+
+.title {
+  font-size: $largeFontSize;
+}
+
+.alert {
+  border: 1px solid $red;
+  border-radius: $borderRadius;
+  background-color: lighten($red, 40%);
+  color: $red;
+  padding: $gap;
+  margin-bottom: $gap;
+  position: relative;
+  font-size: $smallFontSize;
+
+  &::after {
+    content: ':(';
+    position: absolute;
+    top: 50%;
+    right: $gap;
+    font-size: 40px;
+    color: $white;
+    opacity: 0.25;
+    transform: translateY(-50%);
+  }
+}

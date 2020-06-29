@@ -1,0 +1,61 @@
+@import '../../../styles/styles.scss';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.labelWrapper {
+  display: flex;
+}
+
+.label {
+  font-size: $smallFontSize;
+}
+
+.error {
+  font-size: $smallFontSize;
+  color: $red;
+  margin-left: $gap;
+}
+
+.input {
+  background-color: transparent;
+  padding: $gap;
+  border-radius: $borderRadius;
+  border: 1px solid $white;
+  display: block;
+  color: $white;
+  width: 100%;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none;
+    color: $white;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover, 
+  &:-webkit-autofill:focus, 
+  &:-webkit-autofill:active  {
+      -webkit-box-shadow: 0 0 0 30px $yellow inset !important;
+  }
+
+  &[type='checkbox'] {
+    display: inline;
+    width: auto;
+  }
+
+  &::placeholder {
+    color: $white;
+    opacity: 1; /* Firefox */
+  }
+  
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $white;
+  }
+}

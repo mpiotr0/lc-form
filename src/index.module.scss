@@ -1,0 +1,32 @@
+@import './styles/styles.scss';
+
+html, body {
+  height: 100%;
+}
+
+html {
+  background-color: $green;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: $baseFontSize;;
+  color: $white;
+}
+
+.wrapper {
+  margin: 0;
+  padding: $gap;
+  background-color: $yellow;
+  border-radius: $borderRadius;
+  width: 100%;
+
+  @media (min-width: $smallDeviceBreakpoint) {
+    margin: $gap;
+    max-width: 640px;
+  }
+}
