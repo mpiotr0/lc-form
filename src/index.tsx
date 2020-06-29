@@ -1,12 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import 'react-app-polyfill/ie9';
+import 'react-app-polyfill/stable';
+
 import * as serviceWorker from './serviceWorker';
+import { LoginForm } from './pages/login-form';
+import { LoginSuccess } from './pages/login-success';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <div>
+        <Switch>
+          <Route exact path="/">
+            <LoginForm />
+          </Route>
+          <Route path="/login-success">
+            <LoginSuccess />
+          </Route>
+        </Switch>
+      </div>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
